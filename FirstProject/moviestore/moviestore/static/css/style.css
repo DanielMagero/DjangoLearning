@@ -1,0 +1,4 @@
+.bg-index {
+  background-color: url("/static/img/background.jpg") no-repeat fixed;
+  background-size: 100% auto;
+}
