@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tailwind',
+    'theme',
     'home',
 ]
 
@@ -112,6 +114,12 @@ USE_I18N = True
 
 USE_TZ = True
 
+INTERNAL_IPS = [
+  "127.0.0.1",
+]
+
+NPM_BIN_PATH = r"C:/Program Files/nodejs/npm.cmd"
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -122,3 +130,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+TAILWIND_APP_NAME = 'theme'
