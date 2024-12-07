@@ -1,26 +1,31 @@
-{% load compress %}
-{% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Django + Tailwind CSS</title>
+  <title>{{template_data.title}}</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
 
-  {% compress css %}
-  <link rel="stylesheet" href="{% static src/ouput.css%}">
-  {% endcompress %}
 </head>
 
 <body class="bg-green-50">
-  <div class="container mx-auto mt-4">
+  <header class="big-white shadow">
+    <div class="container mx-auto px-4 py-4">
+      <h1 class="text-2xl font-bold">{{ template_data.title}}</h1>
+    </div>
+  </header>
+  <div class="container mx-auto px-4 py-4">
     {% block content %}
     {% endblock content %}
   </div>
 
+  <footer class="bg-white shadow mt-6">
+    <div class=" conatiner mx-auto px-4 py-4 text-center">
+      <p class="text-gray-600">@2024 movie company</p>
+    </div>
+  </footer>
 </body>
 
 </html>
