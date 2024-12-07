@@ -1,12 +1,34 @@
-<!DOCTYPE html>
-<html>
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
 
-<head>
-  <title>About Page</title>
-</head>
-
-<body>
-  <h1>Welcome to the About Page</h1>
-</body>
-
-</html>
+<div class="p-3">
+  <div class="container">
+    <div class="col-md-6 mx-auto mb-3">
+      <h2>About</h2>
+      <hr />
+      <p>
+        That spans across genres, ensuring there's
+        something for every movie lover. Browse our
+        extensive collection of films, including the
+        latest releases, timeless classics, and hidden
+        gems. With just a few clicks, you can rent or
+        purchase your favorite titles and instantly
+        stream them in high-definition quality.
+      </p>
+      <p>
+        Discover the convenience of our digital platform,
+        Updating the About page to use the base template 39
+        where you have the flexibility to watch movies
+        on your preferred device, whether it's a smart
+        TV, tablet, or smartphone. With our intuitive
+        search and recommendation features, finding your
+        next movie night pick has never been easier.
+      </p>
+    </div>
+    <div class="col-md-6 mx-auto mb-3 text-center">
+      <img src="{% static 'img/about.jpg' %}" class="max-width-100" alt="about" />
+    </div>
+  </div>
+</div>
+{% endblock content%}
