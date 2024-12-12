@@ -5,15 +5,15 @@
 
 <div class="p-3">
   <div class="container mx-auto">
-    <div class="flex flex-col md:flex-row mt-3">
+    <div class="space-x-200 flex flex-col md:flex-row mt-3">
       <div class="md:w-1/2 mx-auto mb-3">
         <h2 class="text-2xl font-bold">{{ template_data.movie.name }}</h2>
         <hr class="my-4" />
         <p><b>Description:</b> {{template_data.movie.description }}</p>
         <p><b>Price:</b> ${{template_data.movie.price }}</p>
       </div>
-      <div class="md:w-1/2 mx-auto mb-3 text-center">
-        <img src="{% static 'img/about.jpg' %}" class="rounded-lg" />
+      <div class="md:w-1/2 mx-6 mb-4 text-center">
+        <img src="{{ template_data.movie.image.url }}" class="rounded-lg img-card-400" />
       </div>
     </div>
   </div>

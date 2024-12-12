@@ -35,3 +35,11 @@
 .ms-footer-bottom a:hover {
   color: #fff;
 }
+
+.img-card-200 {
+  @apply w-fit max-h-200;
+}
+
+.img-card-400 {
+  @apply w-fit max-h-400;
+}
