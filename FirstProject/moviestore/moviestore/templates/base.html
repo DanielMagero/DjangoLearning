@@ -20,8 +20,13 @@
       <a href="{% url 'home.index' %}">
         <img src="{% static 'img/logo.png' %}" alt="logo" class="h-7" />
       </a>
-      <div class="hidden md:flex space-x-4">
-        <a href="{% url 'home.about' %}" class="text-white hover:text-gray-300">About</a>
+      <div class="mx-5 flex space-x-4">
+        <div class="md:flex space-x-4">
+          <a href="{% url 'home.about' %}" class="text-white hover:text-gray-300">About</a>
+        </div>
+        <div class="md:flex space-x-4">
+          <a href="{% url 'movies.index' %}" class="text-white hover:text-gray-300">Movies</a>
+        </div>
       </div>
       <button class="md:hidden text-white" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
