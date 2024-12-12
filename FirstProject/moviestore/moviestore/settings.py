@@ -138,3 +138,6 @@ TAILWIND_APP_NAME = 'theme'
 STATICFILES_DIRS  = [ 
   BASE_DIR / 'moviestore/static/',
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
