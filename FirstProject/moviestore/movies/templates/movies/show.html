@@ -11,6 +11,21 @@
         <hr class="my-4" />
         <p><b>Description:</b> {{template_data.movie.description }}</p>
         <p><b>Price:</b> ${{template_data.movie.price }}</p>
+        <p class="mb-4">
+        <form method="post" action="{% url 'cart.add' id=template_data.movie.id %}">
+          <div class="flex items-center">
+            {% csrf_token %}
+            <div class="flex items-center mr-4">
+              <span class="input-group-text bg-gray-200 border border-gray-300 rounded-l-md px-3">Quantity</span>
+              <input type="number" min="1" max="10"
+                class="border border-gray-300 rounded-r-md w-20 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                name="quantity" value="1">
+            </div>
+            <button class="bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700" type="submit">Add to
+              cart</button>
+          </div>
+        </form>
+        </p>
         <h2 class="text-2xl font-semibold mb-4">Reviews</h2>
         <hr class="mb-4" />
         <ul class="space-y-4">
