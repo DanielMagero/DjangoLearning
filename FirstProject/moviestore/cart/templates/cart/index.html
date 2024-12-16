@@ -38,7 +38,15 @@
 
       <a class="bg-gray-200 text-gray-800 py-2 px-4 rounded-lg hover:bg-gray-300 mb-2"><b>Total to pay:</b>
         ${{template_data.cart_total }}</a>
-
+      {% if template_data.movies_in_cart|length > 0 %}
+      <a href="{% url 'cart.clear' %}">
+        <div class="flex justify-center mt-4">
+          <button class="bg-red-600 text-white py-2 px-4 rounded-lg hover:bg-red-700 mb-2">
+            Remove all movies from Cart
+          </button>
+        </div>
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>
