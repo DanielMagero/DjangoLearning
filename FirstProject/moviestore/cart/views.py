@@ -49,4 +49,17 @@ def purchase(request):
    order.total = cart_total
    order.save()
 
-   
+   for movie in movies_in_cart:
+      item = Item()
+      item.movie = movie
+      item.price = movie.price
+      item.order = order
+      item.quantity = cart[str(movie.id)]
+      item.save()
+
+      request.session['cart'] = {}
+      template_data = {}
+      template_data['title'] = 'Purchase confirmation'
+      template_data['order_id'] = order.id
+      return render(request, 'cart/purchase.html', {'template_data': template_data})
+      
