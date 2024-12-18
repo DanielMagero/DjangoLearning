@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
 from movies.models import Movie
 from .utils import calculate_cart_total
+from .models import Order, Item
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -30,3 +32,21 @@ def add_to_cart(request, id):
 def clear(request):
    request.session['cart'] = {}
    return redirect('cart.index')
+
+@login_required
+def purchase(request):
+   cart = request.session.get('cart, {}')
+   movie_ids = list(cart.keys())
+
+   if (movie_ids == []):
+      return redirect('cart.index')
+   
+   movies_in_cart  = Movie.objects.filter(id__in = movie_ids)
+   cart_total = calculate_cart_total(cart, movies_in_cart)
+
+   order = Order()
+   order.user = request.user
+   order.total = cart_total
+   order.save()
+
+   
